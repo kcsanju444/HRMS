@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import "../Components/EmployeeLogin";
 const Login = () => {
   const [values, setValues] = useState({
     email: "",
@@ -11,6 +11,7 @@ const Login = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -27,48 +28,71 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 loginPage">
-      <div className="pl-6rem rounded w-25  border loginForm">
-        <div className="text-warning">{error && error}</div>
-        <h1>Welcome, Admin</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3 ">
-            <label htmlFor="email">
-              <strong>Email:</strong>
-            </label>
-            <input
-              type="email"
-              name="email"
-              autoComplete="off"
-              placeholder="Enter Email"
-              onChange={(e) => setValues({ ...values, email: e.target.value })}
-              className="form-control rounded-0"
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password">
-              <strong>Password:</strong>
-            </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter Password"
-              onChange={(e) =>
-                setValues({ ...values, password: e.target.value })
-              }
-              className="form-control rounded-0"
-            />
-          </div>
-          <button className="btn btn-success w-100 rounded-0 mb-2">
-            Log in
-          </button>
-          <div className="mb-1">
-            <input type="checkbox" name="tick" id="tick" className="me-2" />
-            <label htmlFor="password">
-              You are Agree with terms & conditions
-            </label>
-          </div>
-        </form>
+    <div className="container-fluid  vh-100 d-flex login-page">
+      <div className="login-left d-flex flex-column justify-content-between p-2  text-white">
+        <h2>Admin</h2>
+      <div className="tab-switcher text-center">
+      <button
+        type="button"
+        className="tab"
+        onClick={() => navigate("/employee_login")}
+      >
+        Employee
+      </button><br></br>
+      <button
+        type="button"
+        className="tab active"
+        onClick={() => navigate("/adminlogin")}
+      >
+        Admin
+      </button>
+    </div>
+      </div>
+
+      <div className="login-right d-flex flex-column justify-content-center align-items-center w-50">
+        <div className="login-form-container text-center">
+          <h5 className="text-danger mb-3">{error && error}</h5>
+          <form onSubmit={handleSubmit} className="w-100">
+            <div className="form-group mb-3 d-flex align-items-center border-bottom">
+              <i className="bi bi-person me-2"></i>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="form-control border-0 shadow-none"
+                onChange={(e) =>
+                  setValues({ ...values, email: e.target.value })
+                }
+                required
+              />
+            </div>
+            <div className="form-group mb-4 d-flex align-items-center border-bottom">
+              <i className="bi bi-lock me-2"></i>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="form-control border-0 shadow-none"
+                onChange={(e) =>
+                  setValues({ ...values, password: e.target.value })
+                }
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn w-100 mb-3"
+              style={{
+                background:
+                  "linear-gradient(to bottom right, #60BFC1, #FDB7B9)",
+                color: "#fff",
+                border: "none",
+              }}
+            >
+              Log In
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -20,8 +20,82 @@ ul li :hover {
     border-radius: 50%;
 }
 
-.emp_det_image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
+.login-page {
+  background-color: #60BFC1;
 }
+
+.login-left {
+  width: 50%;
+  background: linear-gradient(to bottom right, #60BFC1, #BADFD7, #FDB7B9, #C17779);
+  color: white;
+  height: 30rem;
+  margin-left: 20%;
+  margin-top: 8%;
+  position: relative;
+
+  box-shadow: 
+    -10px 0 20px rgba(0, 0, 0, 0.15), 
+    0 -10px 20px rgba(0, 0, 0, 0.1),   
+    0 10px 20px rgba(0, 0, 0, 0.2);    
+}
+
+
+.tab-switcher {
+  background-color: transparent;
+  border-radius: 30px 0 0 30px;
+  color: #333;
+  padding: 20px;
+  margin-right: 9%;
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+  writing-mode: horizontal-tb;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.tab-switcher .tab {
+  margin: 0;
+  border-radius: 20px 0 0 20px;
+  padding: 15px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none; 
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+
+.tab-switcher .active {
+  border-radius: 20px 0 0 20px;
+  padding: 24px;
+  background-color: white;
+  cursor: pointer;
+  border: none; 
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+
+.login-right {
+  width: 30%;
+  height: 30rem;
+  margin-top: 8%;
+  margin-right: 20%;
+  padding: 50px;
+  background-color: #fff;
+
+  box-shadow: 
+    10px 0 20px rgba(0, 0, 0, 0.1),   
+    0 -10px 20px rgba(0, 0, 0, 0.05), 
+    0 10px 20px rgba(0, 0, 0, 0.1);   
+}
+
+
+
+.login-form-container {
+  width: 300px;
+}
+
