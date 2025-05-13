@@ -1,0 +1,17 @@
+# HRMS (Human Resource Management System)
+A simple HR management system using React, Node.js, Express, and MySQL.
+
+Setup Instructions
+
+# Install dependencies
+cd server && npm install
+cd ../client && npm install
+
+# Set up MySQL Database
+
+# Run the project
+ **cd server**
+ npm start
+
+ **cd client**
+ npm run dev
